@@ -1,0 +1,76 @@
+﻿NFT Capitalist
+
+
+Gameplay
+* The player starts with $1000 in wallet
+* Invest in crypto, buy NFTs off earnings
+* Long-term investment, no endgame
+* 3 cryptocurrencies
+   * Player can choose to invest in any of them, converting USD to coin
+   * Can also withdraw at any time, converting coin to USD
+   * Coins with APR rewards have reward pool
+      * APR rewards are calculated every second and deposited into pool
+      * Rewards are in coin value, not USD
+      * Can claim reward every 15 seconds, converting reward to USD
+   * Alpha Coin
+      * APR: 0%
+      * RNG = 0.5x - 2x
+      * Starting price: $1000
+   * Beta Coin 
+      * APR: 1,000%
+      * RNG = 0.1x - 3x
+      * Starting price: $1000
+   * Sigma Coin
+      * APR: 1,000,000%
+      * RNG = 0.02x - 4x
+      * Starting price: $1000
+* Total balance = money in each currency + money in wallet, updated every second
+   * Only money in wallet can be invested or used to buy NFTs
+* Every 15 seconds new price target based on coin RNG
+   * New target is generated from coin * coin-specific RNG ratio
+   * Every second coin changes value by (target - original price) / 15 * random number from -0.5 to 2
+* Example: Alpha Coin at $1000
+   * New target is generated from RNG ratio (0.5x - 2x) -> 1.2x -> $1200
+   * Alpha Coin price moves by (1200-1000)/15 * random number from -0.5 to 2 = random value from $-6.66 to 26.64 every second
+* NFT marketplace with NFTs of varying prices and perks
+   * Perks boost investment (APY)
+   * NFTs from graphics folder
+Objectives
+* Collect NFTs
+* Earn money
+
+
+Interaction
+* Crypto tab
+   * Invest and withdraw buttons (6 total for each coin):
+      * Options of $1000, $10000, $100000
+   * Currency values updated every second
+   * Amount invested in each currency updated per click
+   * Harvest rewards for currencies with interest (every 15 seconds)
+      * Button disables for 15 seconds after rewards are collected.
+* NFT tab
+   * Owned NFTs, NFT marketplace
+   * NFTs displayed with image, price, and buy button
+   * NFTs cannot be sold
+   * Scroll to the right to see more nfts 
+      * Display 3 nfts at a time
+
+
+Graphics/Art/Design
+* 3 columns on page with a currency’s info in each
+   * Each column has:
+      * Icon for the currency
+      * The currency value
+      * The amount invested (which also changes with currency price)
+      * 3 invest buttons: $1000, $10000, $100000
+      * 3 withdraw buttons: $1000, $10000, $100000
+* A separate display section for player’s bank account balance
+* NFT art
+LAYOUT
+Refer to designs
+
+
+Why is this game fun?
+* PPL are greedy and making money is addictive
+* NFT collection
+* wow monkey picture!
