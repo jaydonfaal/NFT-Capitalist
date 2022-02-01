@@ -57,6 +57,7 @@ Interaction
 
 
 Graphics/Art/Design
+*NFTs are generated using images provided in the NFT's folders as components, there should be a total of at leat 5 NFT's made.
 * 3 columns on page with a currency’s info in each
    * Each column has:
       * Icon for the currency
