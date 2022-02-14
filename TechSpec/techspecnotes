@@ -1,0 +1,101 @@
+https://github.com/100mypete/NFT-Capitalist
+
+
+* Player
+   * Let playerNFT array
+      * Array of NFT objects owned by the player
+   * let wallet;
+      * let balance;
+         * Start with = $1000
+   * function getUpdatedBalance() //returns the balance of wallet and all coin wallets
+      * return (wallet.balance+alphacoin.balance+betacoin.balance+sigmacoin.balance)*(1+0.1*playerNFT.size()); // apply proper conversions
+   * function buyNFT(index)
+      * Remove the NFT in the marketplace at the specified index, add it to the playerNFT array
+      * Get NFT price and subtract from the player’s balance
+   * function invest(usd, coinType)
+      * wallet.balance-=usd;
+      * coinType.balance+=usd converted into coinType;
+   * function withdraw(usd, coinType) //use an enum (or String) for specific type of coin to withdraw
+      * wallet.balance+=usd;
+      * coinType.balance-=usd converted into coinType;
+   * function checkPerks() //displays the perks the player has and the NFTs that give each one respectively
+* Coin
+   * updatePrices
+      * alphacoin.updatePrice(0.5,2)
+      * betacoin.updatePrice(.1,3)
+      * sigmacoin.updatePrice(0.02,4)
+   * Alpha Coin
+      * let balance;
+      * let conversionRate =1;
+      * let APR = 0;
+      * Let startingPrice = 1000;
+      * function getPrice()
+         * returns balance*conversionRate
+      * Let updatePrice(min,max)
+         * Generate a random number between min and max
+         * Multiply the conversion rate by said random number
+   * Beta Coin
+      * let balance;
+      * let APR = 1000;
+      * let conversionRate = 1;
+      * Let startingPrice = 1000;
+      * function getPrice()
+         * returns balance*conversionRate
+      * Let updatePrice(min,max)
+         * Generate a random number between min and max
+         * Multiply the conversion rate by said random number
+   * Sigma Coin
+      * let balance;
+      * let conversionRate = 1;
+      * let APR = 1000000;
+      * Let startingPrice = 1000;
+      * function getPrice()
+         * returns balance*conversionRate;
+      * Let updatePrice(min,max)
+         * Generate a random number between min and max
+         * Multiply the conversion rate by said random number
+* NFT
+   * let Image = file representing NFT image
+   * let Price = NFT price randomly generated in range of ($2-200,00)
+   * static function generateNFT() //generates an NFT from a file that contains the NFT components
+      * Takes images and puts them on different layers, randomizing the order of the images
+   * Has invest() function
+   * Function getPrice()
+   * let APR = //variable randomly generated per NFT
+      * Maybe explain what this is as well?
+* Marketplace
+   * Let NFT[] arrayOfNFTs = {}; //contains the NFTs available in the marketplace
+   * function generateNFTs(num)
+      * folderPath=path to folder of NFT images;
+      * array=[num]
+      * array.push(randomNFT) // NFT with random image from image folder, random price, random perk
+   * function removeNFT(index)
+      * Removes the NFT from the NFT list at the specific index
+* UI
+* Let displayType = “crypto” //by default, can switch to “nfts” to show nft mode instead
+* Buttons
+   * NFTTabButton
+      * Event onClick
+         * displayType=”nft”
+   * CryptoTabButton
+      * Event onClick
+         * displayType=”crypto”
+* Balance display
+   * Label walletBalance //displays the balance of real money and crypto money (split up by coin) within the player’s wallet
+* Marketplace display
+   * Image nftImage
+   * Price label
+   * Buy button
+   * Left button
+   * Right button
+   * //display NFTS three at a time vertically across the screen, two buttons at both ends of the display (Left & Right buttons) to scroll through NFTs
+* Crypto tab
+   * Invest and withdraw buttons (for each type of crypto)
+
+
+  
+NOTES:
+The included diagram does not necessarily contain the correct methods and variables, but the general class structures and connections are correct. Please refer to the bullet points for exactly which methods and variables go where. 
+checkPerks() is a method under Player instead of NFT
+APY in NFT class is actually APR
+Left and Right buttons are not displayed within UI during the visualization even though they should
